@@ -1,0 +1,12 @@
+APP:
+ RABBIT:
+  HOST: localhost
+  USERNAME: guest
+  PASSWORD: guest
+ QUEUES:
+  EVENTS: events.queue
+ EXCHANGES:
+  EVENTS: events.exchange
+ ROUTING_KEYS:
+  ACCOUNT: event.account
+  FUNDTRANSFER: event.fundtransfer
