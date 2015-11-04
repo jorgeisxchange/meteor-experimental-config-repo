@@ -1,0 +1,32 @@
+info:
+ component: Email Engine
+
+---
+spring:
+ profiles: dev
+server:
+ port: 8082
+eureka:
+ instance:
+  preferIpAddress: false
+ client:
+  serviceUrl:
+   defaultZone: http://localhost:8761/eureka/
+---
+spring:
+ profiles: docker
+ data:
+  mongodb:
+    port: 27017
+    uri: mongodb://emailengine-mongo
+    database: email
+    repositories:
+      enabled: true
+server:
+ port: 0
+eureka:
+ instance:
+  preferIpAddress: true
+ client:
+  serviceUrl:
+   defaultZone: http://discoveryservice:8761/eureka/
